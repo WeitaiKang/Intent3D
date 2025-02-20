@@ -91,10 +91,11 @@ The final required files are as follows:
 
 ## 3. Evaluation
 
-+ Please specify the paths of `--data_root`, `--log_dir`, `--tensorboard`, `--pp_checkpoint`, and `checkpoint_path` in the `test_scanintend` script first.
++ To evaluate on the validation set, please specify the paths of `--data_root`, `--log_dir`, `--tensorboard`, `--pp_checkpoint`, and `checkpoint_path` in the `test_scanintend` script first.
   ```
   sh scripts/test_scanintend.sh
   ```
++ Change `--eval_val` to `--eval_test` for evaluation on the test set.
 
 ## 4. Benchmark
 
