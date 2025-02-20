@@ -719,16 +719,16 @@ def compute_hungarian_loss(end_points, num_decoder_layers, set_criterion,
     tgt_obj_cls_loss = bce(end_points)
     tgt_obj_cls_loss = tgt_obj_cls_loss*20
     query_points_generation_loss = 8 * query_points_generation_loss
-    loss_ce = 1.0 / (num_decoder_layers + 1) * loss_ce               * 0
+    loss_ce = 1.0 / (num_decoder_layers + 1) * loss_ce              
     loss_bbox = 1.0 / (num_decoder_layers + 1) * 5 * loss_bbox
     loss_giou = 1.0 / (num_decoder_layers + 1) * loss_giou
-    loss_sem_align = 1.0 / (num_decoder_layers + 1) * loss_sem_align               * 0
+    loss_sem_align = 1.0 / (num_decoder_layers + 1) * loss_sem_align              
     loss_vo = 1.0 / (num_decoder_layers + 1) * loss_vo 
 
     # weight
-    loss_giou = loss_giou * 5
-    query_points_generation_loss = query_points_generation_loss * 10
-    loss_vo = loss_vo * 0.5
+    # loss_giou = loss_giou * 5
+    # query_points_generation_loss = query_points_generation_loss * 10
+    # loss_vo = loss_vo * 0.5
     loss = query_points_generation_loss + loss_ce + loss_bbox + loss_giou + \
                     loss_sem_align + loss_vo + tgt_obj_cls_loss
 
